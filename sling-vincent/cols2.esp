@@ -1,0 +1,29 @@
+<%
+c = request.getRequestPathInfo();
+ext = c.selectorString;
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cols2</title>
+  <link rel="stylesheet" type="text/css" href="/etc/design/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>You are using cols 2</h1>
+    <div class="row">
+      <div class="col-md-8">
+        <%
+        sling.include(currentNode.getPath() + "/left" + "." + ext + ".html");
+        %>
+      </div>
+      <div class="col-md-4">
+        <%
+        sling.include(currentNode.getPath() + "/right" + "." + ext + ".html");
+        %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

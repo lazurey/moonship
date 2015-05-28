@@ -1,0 +1,5 @@
+<button class="btn btn-default"><%= currentNode.text %></button>
+<form action="<%= currentNode.getPath() %>" method="POST">
+  <input type="text" name="text" value="" />
+  <input type="submit" value="√" />
+</form>

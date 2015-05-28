@@ -1,0 +1,22 @@
+<html>
+<body>
+<%
+c = request.getRequestPathInfo();
+s = c.selectorString;
+
+
+ret = "";
+if (s == 'summary') {
+  var nodes = currentNode.getNodes();
+
+  for (i in nodes) {
+    if (i != null)
+      ret += nodes[i].desc + "<br>";
+  }
+}
+
+%>
+<%= s %>
+<%= ret %>
+</body>
+</html>

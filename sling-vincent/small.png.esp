@@ -1,0 +1,17 @@
+<html>
+<body>
+<%
+
+c=request.getHeaders("User-Agent");
+
+s = "";
+
+while ( c.hasMoreElements() )
+
+s += c.nextElement();
+
+out.print(s);
+%>
+
+</body>
+</html>

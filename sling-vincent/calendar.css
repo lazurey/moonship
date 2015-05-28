@@ -1,0 +1,43 @@
+.calendar-table {
+  width: 100%;
+}
+
+.calendar-table .calendar-header td {
+  font-weight: bold;
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.calendar-today {
+  background: #006f66;
+  color: #fff;
+}
+
+.calendar-table .calendar-title {
+  font-size: 2em;
+  border-bottom: 2px solid;
+  padding: 20px 0;
+}
+
+.event-box {
+  display: inline-block;
+  width: 45%;
+  border: 3px solid #666;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.event-box h3 {
+  background: #006f66;
+  color: #eee;
+  display: block;
+  margin: 0;
+  padding: 10px;
+}
+
+.event-box .event-content {
+  padding: 10px;
+}

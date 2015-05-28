@@ -1,0 +1,9 @@
+<%
+var nodes = currentNode.getNodes();
+
+for (i in nodes) {
+  var p = nodes[i].getPath();
+  sling.include(p); 
+}
+
+%>

@@ -1,0 +1,36 @@
+<%
+var resolver = request.getResourceResolver();
+
+function jnclude(tpl, superTpl) {
+  var path = superTpl || resource.getResourceType();
+  var tplObj = "/apps/" + path;
+  var tplPath = "/apps/" + path + "/" + tpl + ".esp";
+  
+  if (resolver.getResource(tplPath)) {
+    load(tplPath);
+  } else {
+    var curRes = resolver.getResource(tplObj);
+    if (curRes.getResourceSuperType()) {
+      var superType = curRes.getResourceSuperType();
+      jnclude(tpl, superType);
+    }
+  }
+}
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Base</title>
+  <link rel="stylesheet" type="text/css" href="/etc/design/css/bootstrap.min.css">
+</head>
+<body>
+  <% jnclude("header"); %>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Base Main Template</h1>
+    </div>
+  </div>
+  <% jnclude("footer"); %>
+</body>
+</html>

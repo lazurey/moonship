@@ -1,0 +1,15 @@
+<%
+var nodes = currentNode.getNodes();
+
+for (i in nodes) {
+  var p = nodes[i].getPath();
+  sling.include(p);
+  %>
+  <form action="<%= p %>" method="POST">
+    <input name=":operation" value="delete" />
+    <input type="submit" value="x" />
+  </form>
+  <%
+}
+
+%>

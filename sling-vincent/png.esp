@@ -1,0 +1,30 @@
+<%
+c = request.getRequestPathInfo();
+s = c.selectorString;
+
+var path = currentNode.getPath();
+
+
+if (s == 'small') {
+  imgPath = "m.png";
+} else {
+  imgPath = "l.png";
+}
+
+var data = currentNode.getNode(imgPath + "/jcr:content").getProperty("jcr:data");
+
+response.setContentType("image/png");
+response.setContentLength(data.length);
+
+var inputStream = data.getBinary().getStream();
+var buffer = new Array();
+var data = inputStream.read();
+
+while(data != -1) {
+  response.getOutputStream().write(data);
+  data = inputStream.read();
+}
+
+inputStream.close();
+
+%>
